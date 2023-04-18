@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.learntodayfromai.recyclerview.R
@@ -16,6 +17,7 @@ class itemAdapter(
 
     class itemViewHolder(private val view: View): RecyclerView.ViewHolder(view){
         val textview: TextView = view.findViewById(R.id.item_title)
+        val imageView: ImageView = view.findViewById(R.id.item_image)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemViewHolder {
@@ -29,5 +31,6 @@ class itemAdapter(
     override fun onBindViewHolder(holder: itemAdapter.itemViewHolder, position: Int) {
         val item = dataset.get(position)
         holder.textview.setText(context.resources.getString(item.StringResourceId))
+        holder.imageView.setImageDrawable(context.resources.getDrawable(item.ImageResourceId))
     }
 }

@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val listValues: MutableList<Boolean>
+        
         /*val data:Datasource=Datasource()
         binding.textview.setText("${data.loadAffirmations().size}")
 
